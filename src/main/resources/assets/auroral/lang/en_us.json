@@ -1,0 +1,8 @@
+{
+  "itemGroup.auroral.auroral": "Auroral",
+
+  "item.auroral.living_steel": "Living Steel",
+
+  "command.auroral.set_one": "Set %s's life energy to %s",
+  "command.auroral.set": "Set %s players' life energy to %s"
+}

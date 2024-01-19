@@ -3,20 +3,26 @@
 	"id": "auroral",
 	"version": "${version}",
 	"name": "Auroral",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Magic created from life itself",
 	"authors": [
-		"Me!"
+		"Safro"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Safrodev/Auroral"
 	},
-	"license": "CC0-1.0",
+	"license": "All Rights Reserved",
 	"icon": "assets/auroral/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"safro.auroral.Auroral"
+		],
+		"client": [
+			"safro.auroral.AuroralClient"
+		],
+		"cardinal-components-entity": [
+			"safro.auroral.registry.ComponentsRegistry"
 		]
 	},
 	"mixins": [
@@ -28,7 +34,9 @@
 		"java": ">=17",
 		"fabric-api": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
+	"custom": {
+		"cardinal-components": [
+			"auroral:life_energy"
+		]
 	}
 }

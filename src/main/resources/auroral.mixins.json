@@ -3,7 +3,10 @@
 	"package": "safro.auroral.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+
+	],
+	"client": [
+		"client.InGameHudMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
