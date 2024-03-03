@@ -10,6 +10,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import safro.auroral.api.block.Beam;
 import safro.auroral.api.block.EnergyConnectable;
+import safro.auroral.util.EnergyUtil;
 import safro.saflib.block.entity.BasicBlockEntity;
 
 import java.util.HashMap;
@@ -46,20 +47,18 @@ public abstract class EnergyConnectableBlockEntity extends BasicBlockEntity impl
         return this.energy;
     }
 
-    public abstract long getMaxEnergy();
-
     @Override
     public void setEnergy(long amount) {
-        this.energy = amount;
+        this.energy = EnergyUtil.clampLong(amount, 0, this.getMaxEnergy());
         this.update();
     }
 
     public void addEnergy(long amount) {
-        this.setEnergy(Math.min(this.getMaxEnergy(), this.getEnergy() + amount));
+        this.setEnergy(this.getEnergy() + amount);
     }
 
     public void removeEnergy(long amount) {
-        this.setEnergy(Math.max(0, this.getEnergy() - amount));
+        this.addEnergy(-amount);
     }
 
     public List<Beam> getBeams() {

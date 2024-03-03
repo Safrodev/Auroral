@@ -7,16 +7,15 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import safro.auroral.block.entity.EnergyConnectableBlockEntity;
 import safro.auroral.block.entity.TestBlockEntity;
 import safro.auroral.registry.BlockRegistry;
+import safro.auroral.util.EnergyUtil;
 
 public class TestBlock extends BlockWithEntity {
 
@@ -25,13 +24,7 @@ public class TestBlock extends BlockWithEntity {
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            if (world.getBlockEntity(pos) instanceof EnergyConnectableBlockEntity be) {
-                player.sendMessage(Text.of("Energy: " + be.getEnergy()));
-            }
-            return ActionResult.CONSUME;
-        }
-        return ActionResult.SUCCESS;
+        return EnergyUtil.storageInteract(world, pos, player);
     }
 
     @Nullable
@@ -42,7 +35,7 @@ public class TestBlock extends BlockWithEntity {
 
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return world.isClient ? null : checkType(type, BlockRegistry.TEST_BE, TestBlockEntity::tick);
+        return world.isClient() ? null : checkType(type, BlockRegistry.TEST_BE, TestBlockEntity::tick);
     }
 
     public BlockRenderType getRenderType(BlockState state) {

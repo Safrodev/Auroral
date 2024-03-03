@@ -50,6 +50,20 @@ public class LifeEnergyComponent implements AutoSyncedComponent, ServerTickingCo
         }
     }
 
+    public long insert(long amount) {
+        long inserted = 0;
+        if (this.getEnergy() < this.getMaxEnergy()) {
+            if (this.getEnergy() + amount > this.getMaxEnergy()) {
+                inserted = this.getMaxEnergy() - this.getEnergy();
+                this.setEnergy(this.getMaxEnergy());
+            } else {
+                inserted = amount;
+                this.setEnergy(this.getEnergy() + (int)amount);
+            }
+        }
+        return inserted;
+    }
+
     public int getEnergy() {
         return this.energy;
     }

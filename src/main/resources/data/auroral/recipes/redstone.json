@@ -1,0 +1,10 @@
+{
+  "type": "auroral:fusion",
+  "input1": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "input2": {
+    "item": "minecraft:red_dye"
+  },
+  "result": "minecraft:redstone"
+}

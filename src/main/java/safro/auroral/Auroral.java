@@ -14,6 +14,7 @@ import safro.auroral.config.AuroralConfig;
 import safro.auroral.registry.BlockRegistry;
 import safro.auroral.registry.ComponentsRegistry;
 import safro.auroral.registry.ItemRegistry;
+import safro.auroral.registry.RecipeRegistry;
 import safro.saflib.SafLib;
 
 public class Auroral implements ModInitializer {
@@ -29,6 +30,7 @@ public class Auroral implements ModInitializer {
 		// Registry
 		BlockRegistry.init();
 		ItemRegistry.init();
+		RecipeRegistry.init();
 
 		// Events
 		ComponentsRegistry.initEvents();

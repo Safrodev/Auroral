@@ -1,0 +1,10 @@
+{
+  "type": "auroral:fusion",
+  "input1": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input2": {
+    "item": "minecraft:iron_ingot"
+  },
+  "result": "auroral:living_steel"
+}

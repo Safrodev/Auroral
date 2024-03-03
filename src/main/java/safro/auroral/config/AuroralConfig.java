@@ -15,6 +15,19 @@ public class AuroralConfig implements ConfigData {
             """)
     public int maxBeam = 5;
 
+    @Comment("""
+            The amount of life energy consumed per Fusion Altar craft
+            Default: 1000
+            """)
+    public long fusionEnergyPerCraft = 1000;
+
+    @Comment("""
+            The time it takes for the Fusion Altar to craft (in ticks)
+            20 ticks = 1 second
+            Default: 100
+            """)
+    public int fusionCraftTime = 100;
+
     public static AuroralConfig get() {
         return AutoConfig.getConfigHolder(AuroralConfig.class).get();
     }

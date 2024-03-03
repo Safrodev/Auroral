@@ -1,7 +1,11 @@
 {
   "itemGroup.auroral.auroral": "Auroral",
 
+  "block.auroral.fusion_altar": "Fusion Altar",
+
   "item.auroral.living_steel": "Living Steel",
+
+  "text.auroral.filled": "Filled Life Energy",
 
   "command.auroral.set_one": "Set %s's life energy to %s",
   "command.auroral.set": "Set %s players' life energy to %s"

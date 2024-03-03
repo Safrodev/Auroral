@@ -71,7 +71,7 @@ public class EnergyConnectableBlockEntityRenderer<T extends EnergyConnectableBlo
         float f = (float)Math.floorMod(worldTime, 40) + tickDelta;
         float g = maxY < 0 ? f : -f;
         float h = MathHelper.fractionalPart(g * 0.2F - (float)MathHelper.floor(g * 0.1F));
-        float j = AuroralConstants.BEAM_R;
+        float j = AuroralConstants.BEAM_R; //unused
         float k = AuroralConstants.BEAM_G;
         float l = AuroralConstants.BEAM_B;
         matrices.push();

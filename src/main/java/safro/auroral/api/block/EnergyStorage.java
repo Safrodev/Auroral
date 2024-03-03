@@ -4,6 +4,7 @@ import net.minecraft.nbt.NbtCompound;
 
 public interface EnergyStorage {
     long getEnergy();
+    long getMaxEnergy();
     void setEnergy(long amount);
 
     default void readEnergy(NbtCompound nbt) {
